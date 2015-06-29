@@ -1,5 +1,5 @@
-var chatManager = function(datamcflyRef) {
-	this.datamcflyRef = datamcflyRef;
+var chatManager = function(flybaseRef) {
+	this.flybaseRef = flybaseRef;
 };
 
 chatManager.prototype = {
@@ -18,7 +18,7 @@ chatManager.prototype = {
 
 		// no existing chat found, so create a new one
 		if (foundChat == null) {
-			foundChat = new chat( this.datamcflyRef );
+			foundChat = new chat( this.flybaseRef );
 			foundChat.init(fromNumber);
 			foundChat.displayTemplate();
 			this.chats.push(foundChat);
@@ -28,7 +28,7 @@ chatManager.prototype = {
 	},
 	updateChats: function() {
 		var _this = this;
-		this.datamcflyRef.once('value', function (data) {
+		this.flybaseRef.once('value', function (data) {
 			data.forEach( function(message){					
 				var row = message.value();
 				_this.getChat( row.fromNumber ).addMessage(
@@ -38,7 +38,7 @@ chatManager.prototype = {
 				);
 			});
 		});
-		this.datamcflyRef.on('added', function (data) {
+		this.flybaseRef.on('added', function (data) {
 			var row = data.value();
 			_this.getChat( row.fromNumber ).addMessage(
 				row.textMessage,
@@ -49,8 +49,8 @@ chatManager.prototype = {
 	}
 };
 
-var chat = function(datamcflyRef) {
-	this.datamcflyRef = datamcflyRef;
+var chat = function(flybaseRef) {
+	this.flybaseRef = flybaseRef;
 };
 chat.prototype = {
 	// represents a chat window, renders messages to the screen
@@ -63,7 +63,7 @@ chat.prototype = {
 	},
 	replyMessage: function(message) {
 		// this is called when you click the reply button
-		// calls the controller to send a Twilio SMS and update our Data McFly app
+		// calls the controller to send a Twilio SMS and update our Flybae app
 		var _this = this;
 		$.ajax({
 			type: "POST",

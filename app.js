@@ -17,10 +17,10 @@ var client = twilio('ACCOUNTSID', 'AUTHTOKEN');
 var twilio_number = 'YOUR-NUMBER';
 
 var api_key = "YOUR-API-KEY";
-var appname = "YOUR-DATAMCFLY-APP";
+var appname = "YOUR-FLYBASE-APP";
 var collection = "smscontact";
 
-var messagesRef = require('datamcfly').init(appname, collection, api_key);
+var messagesRef = require('flybase').init(appname, collection, api_key);
 
 // backend routes =========================================================
 

@@ -1,9 +1,9 @@
 {
 	"name": "sms-contact-center",
 	"version": "0.0.1",
-	"description": "SMS Contact Center powered by Data McFly, Twilio and Node.js",
+	"description": "SMS Contact Center powered by Flybase, Twilio and Node.js",
 	"main": "app.js",
-	"repository": "https://github.com/DataMcFly/sms-contact",
+	"repository": "https://github.com/flybaseio/sms-contact",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -18,7 +18,7 @@
 		"twilio": "~1.6.0",
 	    "ejs": "~0.8.5",
 		"express": "~3.4.8",
-		"datamcfly": "~1.4.4",
+		"flybase": "~1.4.4",
 		"node-buzz": "~1.1.0",
 		"moment": "~2.5.1",
 		"less-middleware": "~0.2.1-beta",

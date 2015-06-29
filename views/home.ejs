@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script src="https://cdn.datamcfly.com/DataMcFly.js?latest=1"></script>
+	<script src="https://cdn.flybase.io/flybase.js?latest=1"></script>
 	<script src="/js/chat.js"></script>
 	
 	<title>SMS Contact Center, powered by Data McFly and Twilio</title>
@@ -29,7 +29,7 @@
 	<script>
 		$(function(){
 //	inititialize our Data McFly object
-			var messagesRef = new DataMcFly("<%= apikey %>", "<%= appname %>", "<%= collection %>");
+			var messagesRef = new Flybase("<%= apikey %>", "<%= appname %>", "<%= collection %>");
 //	start our chatManager.
 			var myChatManager = new chatManager( messagesRef );
 			myChatManager.updateChats();
