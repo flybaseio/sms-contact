@@ -18,7 +18,7 @@
 		"twilio": "~1.6.0",
 	    "ejs": "~0.8.5",
 		"express": "~3.4.8",
-		"flybase": "~1.4.4",
+		"flybase": "~1.6.2",
 		"node-buzz": "~1.1.0",
 		"moment": "~2.5.1",
 		"less-middleware": "~0.2.1-beta",
