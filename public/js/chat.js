@@ -91,7 +91,7 @@ chat.prototype = {
 		$('#templateContainer').append(content);
 		var _this = this;
 		// handler for reply button
-		$('#' + this.buttonName).click(function() {
+		$('#' + this.buttonName).bind( "click", function() {
 			_this.replyMessage($('#' + _this.textName).val());
 			$('#' + _this.textName).val('');
 		});
