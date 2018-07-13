@@ -24,8 +24,5 @@
 		"less-middleware": "~0.2.1-beta",
 		"body-parser" : "~1.4.2",
 		"method-override" : "~2.0.2"	
-	},
-	"engines": {
-		"node": "0.10.26"
 	}
 }
